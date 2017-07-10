@@ -6,6 +6,7 @@ const passport = require('passport');
 const mongoose = require ('mongoose');
 const config = require('./config/database');
 
+//Calls connection to MongoDB
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected', () => {
@@ -22,7 +23,7 @@ const users = require('./routes/users');
 
 
 // PORT number
-const port = 3000;
+const port = 3000; //set to 3000 for testing
 
 // CORS Middleware
 app.use(cors());
@@ -34,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Body Parser Middleware
 app.use(bodyParser.json());
 
-// Passport Middleware (Using passport-jwt)
+// Passport Middleware (Using passport-jwt) for token authentication. Uses localStorage of browser
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -49,8 +50,10 @@ app.get('/', (req, res) => {
  res.send('Invalid Endpoint');
 });
 
+//Catch all route for anything that doesn't exist. public/index.html needs to be updated.
 app.get ('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
+
 //Start Server
 app.listen(port, () => {console.log('Server started on port '+port)});
