@@ -1,7 +1,7 @@
 {
-  "name": "meanauthapp",
+  "name": "NodeSetupWithAUthentication",
   "version": "1.0.0",
-  "description": "MEAN stack authentication app",
+  "description": "Default MEAN stack authentication app",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,6 +16,10 @@
     "body-parser":"*",
     "passport":"*",
     "passport-jwt":"*"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/rflyman/NodeSetupWithAuthentication.git"
   },
   "author": "Robert Flyman",
   "license": "ISC"
