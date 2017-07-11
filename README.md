@@ -4,6 +4,7 @@ Configuration:<br />
 Uses mongodb instance on (localhost:27017) with database name "meanauth". Please update config/database.js with your connection information before running.<br />
 <br />
 Installation:<br />
+cd NodeSetupWithAuthentication<br />
 npm install<br />
 npm start<br />
 
